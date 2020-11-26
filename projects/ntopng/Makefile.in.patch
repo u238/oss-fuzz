@@ -1,0 +1,11 @@
+--- ntopng/Makefile.in	2020-08-13 14:39:51.944149922 +0200
++++ ntopng/Makefile.in.new	2020-11-26 15:20:26.781736070 +0100
+@@ -155,7 +155,7 @@
+ .PRECIOUS: $(TARGET) $(OBJECTS)
+ 
+ $(TARGET): $(OBJECTS) $(LIB_TARGETS) Makefile
+-	$(GPP) $(OBJECTS) -Wall $(LDFLAGS) $(NLIBS) -o $@
++	$(GPP) ${CPPFLAGS} $(CXXFLAGS) $(OBJECTS) -Wall $(LDFLAGS) $(NLIBS) -o $@
+ 
+ test_fifo_queue: $(OBJECTS_NO_MAIN) $(LIB_TARGETS)
+ 	rm src/FifoStringsQueue.o

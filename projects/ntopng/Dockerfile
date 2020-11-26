@@ -8,13 +8,14 @@ RUN apt-get install --yes rename libsnmp-dev
 RUN apt-get install --yes libmysqlclient-dev libzmq3-dev
 
 # checkout all sources needed to build your project
-#RUN git clone https://github.com/ntop/ntopng.git
-COPY . ntopng
+RUN git clone https://github.com/ntop/ntopng.git
+
+#COPY . ntopng
 RUN git clone https://github.com/ntop/nDPI.git
 
-
 # copy build script and other fuzzer files in src dir
-COPY build.sh src/*_fuzzer.cpp $SRC/
+COPY build.sh *_fuzzer.cpp $SRC/
+COPY Makefile.in.patch $SRC/
 
 # current directory for the build script
-WORKDIR ntopng
+WORKDIR $SRC

@@ -1,0 +1,13 @@
+homepage: "https://www.ntop.org/products/ntopng"
+language: c++
+primary_contact: "luca.deri@gmail.com"
+auto_ccs :
+  - "forrer@gmail.com"
+fuzzing_engines:
+  - libfuzzer
+  - afl
+  - honggfuzz
+sanitizers:
+  - address
+  - undefined
+  - memory
