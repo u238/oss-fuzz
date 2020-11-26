@@ -14,7 +14,7 @@ RUN git clone https://github.com/ntop/nDPI.git
 
 
 # copy build script and other fuzzer files in src dir
-COPY build.sh src/fuzz_prefs_loadfromfile.cpp $SRC/
+COPY build.sh src/*_fuzzer.cpp $SRC/
 
 # current directory for the build script
 WORKDIR ntopng
