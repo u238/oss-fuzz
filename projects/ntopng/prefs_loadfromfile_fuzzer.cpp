@@ -1,5 +1,6 @@
 #include "ntop_includes.h"
 
+
 void write_binary_file(const char * filename, const uint8_t * data, size_t size) {
     FILE *out = fopen(filename, "wb");
     const size_t wrote = fwrite(data, size, 1, out);
