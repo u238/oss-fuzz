@@ -4,8 +4,8 @@
  .PRECIOUS: $(TARGET) $(OBJECTS)
  
  $(TARGET): $(OBJECTS) $(LIB_TARGETS) Makefile
--	$(GPP) $(OBJECTS) -Wall $(LDFLAGS) $(NLIBS) -o $@
-+	$(GPP) ${CPPFLAGS} $(CXXFLAGS) $(OBJECTS) -Wall $(LDFLAGS) $(NLIBS) -o $@
+-	$(GPP) $(OBJECTS) -Wall $(LDFLAGS) $(LIBS) -o $@
++	$(GPP) ${CPPFLAGS} $(CXXFLAGS) $(OBJECTS) -Wall $(LDFLAGS) $(LIBS) -o $@
  
  test_fifo_queue: $(OBJECTS_NO_MAIN) $(LIB_TARGETS)
  	rm src/FifoStringsQueue.o
